@@ -1,0 +1,73 @@
+.figure {
+  position: relative;
+  margin-top: 40vw;
+  padding: 0 7rem;
+
+  p {
+    max-width: 71rem;
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+    text-align: center;
+    font: var(--subtitle);
+    color: var(--text-label);
+    opacity: 0.6;
+    transition: color 0.4s ease, opacity 0.4s ease;
+  }
+
+  strong {
+    color: var(--text-label);
+    transition: color 0.4s ease;
+  }
+}
+
+.figure-img {
+  position: absolute;
+  height: auto;
+  opacity: 0;
+  transform: rotate(var(--rot, 0deg)) scale(calc(var(--flip, 1) * 0.6), 0.6);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+
+.img-top {
+  top: 0;
+  left: 50%;
+  margin-left: -3.75rem;
+  width: 7.5rem;
+  --rot: 0deg;
+}
+
+.img-left {
+  bottom: 1.3rem;
+  left: 3rem;
+  width: 5rem;
+  --flip: -1;
+  --rot: -15deg;
+}
+
+.img-right {
+  bottom: 2.3rem;
+  right: 2rem;
+  width: 3.5rem;
+  --rot: -15deg;
+}
+
+.figure:hover {
+  p {
+    color: var(--text-body);
+    opacity: 1;
+  }
+
+  strong {
+    color: var(--blue-light);
+  }
+
+  .figure-img {
+    opacity: 1;
+    transform: rotate(var(--rot, 0deg)) scale(var(--flip, 1), 1);
+  }
+
+  .img-top   { transition-delay: 0s; }
+  .img-left  { transition-delay: 0.3s; }
+  .img-right { transition-delay: 0.6s; }
+}
