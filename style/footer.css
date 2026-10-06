@@ -1,0 +1,95 @@
+section.bg {
+  background-image: url(../assets/book-trace-background.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  width: 100%;
+  min-height: 16rem; 
+}
+
+section.bg {
+  background-color: transparent; 
+  margin-top: 0;
+}
+
+section.bg > .container {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.bg {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 70px 12% 120px;
+  background-color: #001a2e;
+  font-family: "Raleway", sans-serif;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer-logo {
+  width: 160px;
+}
+
+.social {
+  display: flex;
+  gap: 16px;
+}
+
+.social img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.footer-links {
+  display: flex;
+  gap: 36px;
+}
+
+.footer-col h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.footer-col a {
+  font-size: 12px;
+  color: #6fb1d9;
+  text-decoration: none;
+}
+
+a.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5rem;
+  position: relative;
+  isolation: isolate;
+
+  &:hover::before {
+    scale: 1;
+  }
+
+  &::before {
+    content: "";
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: var(--text-label);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    scale: 0;
+    transition: scale 200ms;
+  }
+}
