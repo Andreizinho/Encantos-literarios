@@ -1,0 +1,174 @@
+.pricing {
+  padding: 0 7rem 8rem;
+}
+
+.cabeçalho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-block: 6rem;
+
+  h2 {
+    font: var(--title-sm);
+    color: var(--text-title);
+  }
+}
+
+li {
+  background: url(../assets/star-blue.svg) no-repeat left center;
+  background-size: 1.5rem;
+  padding-left: 2rem;
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+& li.center {
+  background: url(../assets/star-purple.svg) no-repeat left center;
+  background-size: 1.5rem;
+  padding-left: 2rem;
+  min-height: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.cards {
+  --card-width: 18rem;
+  --card-gap: 1.5rem;
+  --offset: calc(var(--card-width) + var(--card-gap));
+
+  position: relative;
+  width: 100%;
+  max-width: calc(var(--card-width) * 3 + var(--card-gap) * 2);
+  height: 30rem;            
+  margin-inline: auto;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: var(--card-width);
+  height: 100%;
+  margin-left: calc(var(--card-width) / -2);
+
+  display: flex;
+  flex-direction: column;
+  background-color: var(--shape-base);
+  border: 1px solid var(--shape-stroke);
+  border-radius: 1.5rem;
+
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-center { z-index: 3; }
+.card-left   { z-index: 1; }
+.card-right  { z-index: 2; }
+
+.cards:hover .card-left  { transform: translateX(calc(var(--offset) * -1)); }
+.cards:hover .card-right { transform: translateX(var(--offset)); }
+
+
+.card h3 {
+  font: var(--title-xs);
+  color: var(--blue-light);
+}
+
+.card zin-pricing {
+  display: block;
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-title);
+}
+
+.card span {
+  margin-top: 0.45rem;
+  font: var(--body-sm);
+  color: var(--text-label);
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--shape-stroke);
+  margin-block: 1.5rem;
+}
+
+ul[role="list"] {
+  list-style: none;
+  flex: 1;
+}
+
+.card li {
+  font: var(--body-xs);
+  color: var(--text-body);
+}
+
+.card a {
+  margin-top: 2rem;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  font: var(--button);
+  color: var(--text-title);
+  background-color: var(--blue-dark);
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: var(--pink-dark);
+  }
+}
+
+
+@media (hover: none) {
+  .cards {
+    height: auto;
+    display: grid;
+    gap: var(--card-gap);
+    justify-items: center;
+  }
+
+  .card {
+    position: relative;
+    left: auto;
+    margin-left: 0;
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+}
+
+.cards {
+  --card-width: 18rem;
+  --card-gap: 1.5rem;
+  --offset: calc(var(--card-width) + var(--card-gap));
+  --rotate: 8deg;      
+  --drop: 2rem;        
+
+  position: relative;
+  width: 100%;
+  max-width: calc(var(--card-width) * 3 + var(--card-gap) * 2);
+  height: 30rem;
+  margin-inline: auto;
+}
+
+.cards:hover .card-left {
+  transform: translate(calc(var(--offset) * -1), var(--drop)) rotate(calc(var(--rotate) * -1));
+}
+
+.cards:hover .card-right {
+  transform: translate(var(--offset), var(--drop)) rotate(var(--rotate));
+}
+
+.card {
+  transform-origin: center bottom;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: none) {
+  .cards:hover .card-left,
+  .cards:hover .card-right {
+    transform: none;
+  }
+}

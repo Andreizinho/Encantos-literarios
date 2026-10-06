@@ -41,6 +41,17 @@
   --button: 700 0.875rem var(--font-family);
   --link: 500 0.875rem var(--font-family);
   --tag: 700 0.625rem var(--font-family);
+
+  --px-lg: 1.5rem;
+  --py-lg: 1.5rem;
+}
+
+.py-lg {
+  padding-block: var(--py-lg);
+}
+
+.px-lg {
+  padding-inline: var(--px-lg);
 }
 
 body {
@@ -69,3 +80,15 @@ a {
   text-decoration: none;
   color: inherit;
   }
+
+  .flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
